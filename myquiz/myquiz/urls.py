@@ -18,7 +18,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # ####
     # url(r'^courses/', views.courselist.as_view()),
-    # ####
+    # #### serializers included
     url(r'^', include('courses.urls')),
+    url(r'^', include('assignment.urls')),
 ]
 
