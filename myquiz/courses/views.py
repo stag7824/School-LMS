@@ -43,7 +43,6 @@ from courses .models import Enrollment
 from courses .serializers import CourseSerializer
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
-
 from courses .serializers import EnrollmentSerializer
 
 
