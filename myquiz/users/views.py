@@ -72,4 +72,4 @@ def user_list_active(request):
         tutorials_serializer = UserSerializer(tutorials, many=True)
         return JsonResponse(tutorials_serializer.data, safe=False)
     
-    #__________________________________________________________#Course part ended here
+    #__________________________________________________________#Users part ended here
