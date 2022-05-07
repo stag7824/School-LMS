@@ -40,15 +40,22 @@ INSTALLED_APPS = [
     #Third Party Apps
     'crispy_forms',
     #MY APPS
-    
+    'rest_framework',
     'courses',
+    # 'courses.apps.CoursesConfig',
     'users',
     'quiz',
     'assignment',
     'announcements',
+    # CORS heaeder
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    # CORS
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ####
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'myquiz.urls'
@@ -90,6 +98,11 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8081',
+)
 
 
 # Password validation
